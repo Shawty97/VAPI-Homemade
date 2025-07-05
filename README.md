@@ -51,9 +51,9 @@ docker-compose up -d --build
 
 ### **📋 Getting Started Steps:**
 
-1. **Configure Credentials**: Copy `env.template` to `.env` and add your API keys
+1. **Configure Credentials**: Copy `.env.example` to `.env` and add your API keys
    ```bash
-   cp env.template .env
+   cp .env.example .env
    ```
 
 2. **Start the System**: Use intelligent startup scripts (Python 3.11+ required)
@@ -66,10 +66,11 @@ docker-compose up -d --build
    ./start_scripts/start_docker.sh
    ```
 
-3. **Make a Test Call**: Use the REST API to place an outbound call
+3. **Make a Test Call**: Use the REST API with an API key to place an outbound call
    ```bash
    curl -X POST "http://localhost:8000/api/outbound-call" \
         -H "Content-Type: application/json" \
+        -H "X-API-Key: <your-key>" \
         -d '{"to_number": "+15551234567"}'
    ```
 
@@ -202,7 +203,7 @@ This directory holds the instructional texts that guide the agent's conversation
 ### **Environment Configuration:**
 ```bash
 # Copy template and configure
-cp env.template .env
+cp .env.example .env
 
 # Edit .env with your credentials:
 # AZURE_SPEECH_KEY=your_key_here
