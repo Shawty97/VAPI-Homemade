@@ -80,6 +80,13 @@ docker-compose up -d --build
         -F "file=@sample.wav"
    ```
 
+5. **Generate Tasks**: Use the Taskmaster CLI to parse the PRD
+   ```bash
+   python scripts/task_master.py initialize-project
+   python scripts/task_master.py parse-prd VAPI_HOMEMADE_PRD.md --limit 5
+   python scripts/task_master.py next-task
+   ```
+
 ---
 
 ## 🏗️ Architecture Overview

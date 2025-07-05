@@ -125,6 +125,7 @@ test_*.py
 !tests/test_performance.py
 !tests/test_call.py
 !tests/test_pipeline_api.py
+!tests/test_task_master.py
 
 # Monitoring and scripts copies
 monitoring*/
