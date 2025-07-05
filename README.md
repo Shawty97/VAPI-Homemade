@@ -51,9 +51,9 @@ docker-compose up -d --build
 
 ### **📋 Getting Started Steps:**
 
-1. **Configure Credentials**: Copy `env.template` to `.env` and add your API keys
+1. **Configure Credentials**: Copy `.env.example` to `.env` and add your API keys
    ```bash
-   cp env.template .env
+   cp .env.example .env
    ```
 
 2. **Start the System**: Use intelligent startup scripts (Python 3.11+ required)
@@ -202,7 +202,7 @@ This directory holds the instructional texts that guide the agent's conversation
 ### **Environment Configuration:**
 ```bash
 # Copy template and configure
-cp env.template .env
+cp .env.example .env
 
 # Edit .env with your credentials:
 # AZURE_SPEECH_KEY=your_key_here
