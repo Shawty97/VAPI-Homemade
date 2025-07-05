@@ -1,0 +1,6 @@
+fastapi
+uvicorn
+structlog
+httpx==0.24.1
+pytest
+pytest-asyncio
