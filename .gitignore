@@ -120,6 +120,13 @@ requirements*.txt
 *_analysis.py
 test_*.py
 !tests/
+!tests/test_api.py
+!tests/test_voice.py
+!tests/test_performance.py
+!tests/test_call.py
+!tests/test_pipeline_api.py
+!tests/test_task_master.py
+!tests/test_webhook.py
 
 # Monitoring and scripts copies
 monitoring*/

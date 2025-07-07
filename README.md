@@ -51,9 +51,9 @@ docker-compose up -d --build
 
 ### **📋 Getting Started Steps:**
 
-1. **Configure Credentials**: Copy `env.template` to `.env` and add your API keys
+1. **Configure Credentials**: Copy `.env.example` to `.env` and add your API keys
    ```bash
-   cp env.template .env
+   cp .env.example .env
    ```
 
 2. **Start the System**: Use intelligent startup scripts (Python 3.11+ required)
@@ -66,12 +66,35 @@ docker-compose up -d --build
    ./start_scripts/start_docker.sh
    ```
 
-3. **Make a Test Call**: Use the REST API to place an outbound call
+3. **Make a Test Call**: Use the REST API with an API key to place an outbound call
    ```bash
    curl -X POST "http://localhost:8000/api/outbound-call" \
         -H "Content-Type: application/json" \
+        -H "X-API-Key: <your-key>" \
         -d '{"to_number": "+15551234567"}'
    ```
+4. **Test the Voice Pipeline**: Send audio to the new pipeline endpoint
+   ```bash
+   curl -X POST "http://localhost:8000/api/voice-pipeline" \
+        -H "X-API-Key: <your-key>" \
+        -F "file=@sample.wav"
+   ```
+5. **Trigger a Webhook**: POST an event to the webhook endpoint
+   ```bash
+   curl -X POST "http://localhost:8000/api/webhook" \
+        -H "X-API-Key: <your-key>" \
+        -H "Content-Type: application/json" \
+        -d '{"type": "ping"}'
+   ```
+
+6. **Generate Tasks**: Use the Taskmaster CLI to parse the PRD
+   ```bash
+   python scripts/task_master.py initialize-project
+   python scripts/task_master.py parse-prd VAPI_HOMEMADE_PRD.md --limit 5
+   python scripts/task_master.py next-task
+   ```
+   The tasks are saved to `tasks.json` in the project root so they can be tracked
+   with version control.
 
 ---
 
@@ -202,7 +225,7 @@ This directory holds the instructional texts that guide the agent's conversation
 ### **Environment Configuration:**
 ```bash
 # Copy template and configure
-cp env.template .env
+cp .env.example .env
 
 # Edit .env with your credentials:
 # AZURE_SPEECH_KEY=your_key_here
