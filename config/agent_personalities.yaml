@@ -1,0 +1,5 @@
+# Placeholder personalities configuration
+agents:
+  default:
+    voice: "standard"
+    prompt: "You are a helpful assistant."

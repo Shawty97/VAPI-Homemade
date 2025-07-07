@@ -1,0 +1,52 @@
+[
+  {
+    "id": 1,
+    "desc": "**10x niedrigere Latenz:** <100ms End-to-End Response Time",
+    "status": "pending"
+  },
+  {
+    "id": 2,
+    "desc": "**90% Kosteneinsparung:** Open-Source vs. kommerzielle L\u00f6sungen",
+    "status": "pending"
+  },
+  {
+    "id": 3,
+    "desc": "**Enterprise-Grade Features:** SIP, Multi-tenant, Advanced Analytics",
+    "status": "pending"
+  },
+  {
+    "id": 4,
+    "desc": "**Hardware-Acceleration:** Lokale Whisper, GPU-optimiert",
+    "status": "pending"
+  },
+  {
+    "id": 5,
+    "desc": "**Real-time WebRTC:** Echte Streaming-Audio-Verarbeitung",
+    "status": "pending"
+  },
+  {
+    "id": 6,
+    "desc": "Real-time bidirectional audio streaming",
+    "status": "pending"
+  },
+  {
+    "id": 7,
+    "desc": "Adaptive bitrate based on connection quality",
+    "status": "pending"
+  },
+  {
+    "id": 8,
+    "desc": "Echo cancellation and noise reduction",
+    "status": "pending"
+  },
+  {
+    "id": 9,
+    "desc": "Multi-codec support (Opus, G.711, G.722)",
+    "status": "pending"
+  },
+  {
+    "id": 10,
+    "desc": "Connection fallback mechanisms",
+    "status": "pending"
+  }
+]
