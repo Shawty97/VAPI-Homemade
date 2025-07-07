@@ -565,6 +565,10 @@ docker-compose logs --since 1h | grep -E "(error|warning|403)"
 
 ---
 
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+
 *Built with ❤️ using LiveKit, Azure AI Services, and modern cloud infrastructure*
 
 **Key Achievement**: Comprehensive system architecture with cross-platform compatibility, intelligent startup options, and production-ready Docker orchestration.
