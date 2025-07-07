@@ -7,6 +7,7 @@ from routers.websocket_router import router as websocket_router
 from routers.call_router import router as call_router
 from routers.pipeline_router import router as pipeline_router
 from routers.webhook_router import router as webhook_router
+from routers.rtc_router import router as rtc_router
 
 logger = structlog.get_logger()
 
@@ -22,6 +23,7 @@ app.include_router(websocket_router)
 app.include_router(call_router)
 app.include_router(pipeline_router)
 app.include_router(webhook_router)
+app.include_router(rtc_router)
 
 
 @app.get("/metrics")

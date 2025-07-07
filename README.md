@@ -79,15 +79,21 @@ docker-compose up -d --build
         -H "X-API-Key: <your-key>" \
         -F "file=@sample.wav"
    ```
-5. **Trigger a Webhook**: POST an event to the webhook endpoint
+5. **Negotiate a WebRTC connection**: Send an SDP offer
+   ```bash
+   curl -X POST "http://localhost:8000/api/rtc" \
+        -H "X-API-Key: <your-key>" \
+        -H "Content-Type: application/json" \
+        -d '{"sdp": "offer", "type": "offer"}'
+   ```
+6. **Trigger a Webhook**: POST an event to the webhook endpoint
    ```bash
    curl -X POST "http://localhost:8000/api/webhook" \
         -H "X-API-Key: <your-key>" \
         -H "Content-Type: application/json" \
         -d '{"type": "ping"}'
    ```
-
-6. **Generate Tasks**: Use the Taskmaster CLI to parse the PRD
+7. **Generate Tasks**: Use the Taskmaster CLI to parse the PRD
    ```bash
    python scripts/task_master.py initialize-project
    python scripts/task_master.py parse-prd VAPI_HOMEMADE_PRD.md --limit 5
